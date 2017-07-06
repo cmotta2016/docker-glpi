@@ -16,7 +16,7 @@ You will need a database. The following example run container in background link
 # Persistent data
 To make data persistent, export the following volume:
 ```
-# docker run -d -P --link some-mysql -v /some/host/dir/:/var/www/ cmotta2016/glpi
+# docker run -d -P --link some-mysql -v /some/host/dir/:/var/www/glpi cmotta2016/glpi
 ```
 # Docker Compose
 Deploy both glpi and mysql with compose.
@@ -42,7 +42,7 @@ services:
        - "80"
      restart: unless-stopped
      volumes:
-       - /opt/systems:/var/www
+       - /opt/systems/glpi:/var/www/glpi
      container_name: glpi-app
 ```
 
