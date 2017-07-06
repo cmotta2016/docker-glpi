@@ -23,7 +23,6 @@ RUN apt-get update && apt-get install -y \
 		libedit2 \
 		libsqlite3-0 \
 		libxml2 \
-		libxml2-dev \
 		xz-utils \
 	--no-install-recommends && rm -r /var/lib/apt/lists/*
 
@@ -188,7 +187,7 @@ RUN set -xe \
 COPY docker-php-ext-* docker-php-entrypoint /usr/local/bin/
 RUN chmod +x /usr/local/bin/*
 ## Instala e habilitando os requisitos para o GLPI
-RUN apt-get update && apt-get install -y libpng12-dev libjpeg-dev libldap2-dev libc-client-dev libkrb5-dev libssl-dev && rm -rf /var/lib/apt/lists/*  && docker-php-ext-configure gd --with-jpeg-dir=/usr/include --with-png-dir=/usr/include  && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ && docker-php-ext-configure imap --with-kerberos --with-imap-ssl && docker-php-ext-configure opcache && docker-php-ext-configure xmlrpc && docker-php-ext-install gd ldap mysqli imap opcache xmlrpc
+RUN apt-get update && apt-get install -y libxml2-dev libpng12-dev libjpeg-dev libldap2-dev libc-client-dev libkrb5-dev libssl-dev && rm -rf /var/lib/apt/lists/*  && docker-php-ext-configure gd --with-jpeg-dir=/usr/include --with-png-dir=/usr/include  && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ && docker-php-ext-configure imap --with-kerberos --with-imap-ssl && docker-php-ext-configure opcache && docker-php-ext-configure xmlrpc && docker-php-ext-install gd ldap mysqli imap opcache xmlrpc
 ## Copia o pacote do GLPI
 ADD https://github.com/glpi-project/glpi/releases/download/9.1.4/glpi-9.1.4.tgz /tmp/
 
