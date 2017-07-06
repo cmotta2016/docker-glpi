@@ -3,20 +3,20 @@
 GLPI is the Information Resource-Manager with an additional Administration- Interface. You can use it to build up a database with an inventory for your company (computer, software, printers...). It has enhanced functions to make the daily life for the administrators easier, like a job-tracking-system with mail-notification and methods to build a database with basic information about your network-topology.
 
 # About image
-GLPI version: 9.1.3
-PHP version: 2.6.29
-Web Server: Apache2.4.10
+GLPI version: 9.1.4
+PHP version: 7.1.6
+Web Server: Apache 2.4.10
 OS: Debian Jessie
 
 # How to use this image
 You will need a database. The following example run container in background linking to a database container.
 ```
-# docker run -d -p 80:80 --link some-mysql cmotta2016/glpi
+# docker run -d -P --link some-mysql cmotta2016/glpi
 ```
 # Persistent data
 To make data persistent, export the following volume:
 ```
-# docker run -d -p 80:80 --link some-mysql -v /some/host/dir/:/var/www/ cmotta2016/glpi
+# docker run -d -P --link some-mysql -v /some/host/dir/:/var/www/ cmotta2016/glpi
 ```
 # Docker Compose
 Deploy both glpi and mysql with compose.
