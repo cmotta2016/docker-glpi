@@ -12,6 +12,7 @@ RUN docker-php-ext-enable apc
 ## Download GLPI package from github
 ADD https://github.com/glpi-project/glpi/releases/download/9.2/glpi-9.2.tgz /tmp/glpi.tgz
 
+## Configure Image
 ENTRYPOINT ["docker-php-entrypoint"]
 
 COPY apache2-foreground /usr/local/bin/
