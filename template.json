@@ -20,6 +20,17 @@
       "categories": ["monitoring"],
       "platform": "linux",
       "image": "cmotta2016/glpi:latest",
+      "env": [
+        {
+          "name": "GLPI_DB_HOST",
+          "label": "MySQL database host",
+          "type": "container"
+        },
+        {
+          "name": "GLPI_DB_PASSWORD",
+          "label": "Database password"
+        }
+      ],
       "ports": [
           "80/tcp"    
       ],
