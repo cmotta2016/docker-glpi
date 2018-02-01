@@ -1,5 +1,4 @@
-[
-  {
+{
     "type": "container",
     "title": "GLPI",
     "description": "Free IT and Asset Management Software",
@@ -9,11 +8,4 @@
     "ports": [
     "80/tcp"    
     ]
-    "volumes": [
-    {
-    "container": "/var/www/glpi",
-    "bind": "/opt/systems/glpi"
-  }
-]
 }
-]
