@@ -3,10 +3,10 @@
 GLPI is the Information Resource-Manager with an additional Administration- Interface. You can use it to build up a database with an inventory for your company (computer, software, printers...). It has enhanced functions to make the daily life for the administrators easier, like a job-tracking-system with mail-notification and methods to build a database with basic information about your network-topology.
 
 # About image
-GLPI version: 9.1.4
-PHP version: 7.1.6
+GLPI version: 9.2.2
+PHP version: 7.2.3
 Web Server: Apache 2.4.10
-OS: Debian Jessie
+OS: Debian Stretch
 
 # How to use this image
 You will need a database. The following example run container in background linking to a database container.
