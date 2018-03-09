@@ -15,6 +15,8 @@ ADD https://github.com/glpi-project/glpi/releases/download/9.2.2/glpi-9.2.2.tgz 
 ENTRYPOINT ["docker-php-entrypoint"]
 
 COPY apache2-foreground /usr/local/bin/
+
+## Make apache2-foreground executable
 RUN chmod +x /usr/local/bin/apache2-foreground
 EXPOSE 80 443
 CMD ["apache2-foreground"]
