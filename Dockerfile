@@ -1,5 +1,5 @@
 FROM php:7.2.3-apache
-MAINTAINER Carlos Motta <motta.carlos08@gmail.com>
+MAINTAINER Carlos Augusto Motta <motta.carlos08@gmail.com>
 
 RUN chmod +x /usr/local/bin/*
 
