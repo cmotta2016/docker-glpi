@@ -22,28 +22,30 @@ To make data persistent, export the following volume:
 Deploy both glpi and mysql with compose.
 First create a dir and file called docker-compose.yml with following content:
 ```
-version: '2'
+version: '3'
 
 services:
    db:
-     image: mysql
+     image: mysql:5.7.22
      volumes:
-       - /opt/database:/var/lib/mysql
+       - database:/var/lib/mysql
      restart: unless-stopped
      environment:
        MYSQL_ROOT_PASSWORD: glpi
      container_name: database
 
    glpi:
-     depends_on:
-       - db
      image: cmotta2016/glpi
      ports:
        - "80"
      restart: unless-stopped
      volumes:
-       - /opt/systems/glpi:/var/www/glpi
-     container_name: glpi-app
+       - glpiserver:/var/www/glpi
+     container_name: glpiserver
+     
+volumes:
+  database:
+  ocsserver:
 ```
 
 So, inside work dir, run the following command and enjoy it:
