@@ -15,6 +15,8 @@ ADD https://github.com/glpi-project/glpi/releases/download/9.3.1/glpi-9.3.1.tgz 
 ENTRYPOINT ["docker-php-entrypoint"]
 
 COPY apache2-foreground /usr/local/bin/
+COPY cas.tgz /var/www/html/
+RUN pear install cas.tgz
 RUN chmod +x /usr/local/bin/apache2-foreground
 EXPOSE 80 443
 CMD ["apache2-foreground"]
