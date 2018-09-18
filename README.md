@@ -45,7 +45,7 @@ services:
      
 volumes:
   database:
-  ocsserver:
+  glpiserver:
 ```
 
 So, inside work dir, run the following command and enjoy it:
