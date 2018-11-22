@@ -1,4 +1,4 @@
-FROM php:7.2.10-apache
+FROM php:7.2.12-apache
 MAINTAINER Carlos Motta <motta.carlos08@gmail.com>
 
 RUN chmod +x /usr/local/bin/*
@@ -10,7 +10,7 @@ RUN echo extension=apcu.so > /usr/local/etc/php/php.ini
 RUN docker-php-ext-enable apc
 
 ## Download GLPI package from github
-ADD https://github.com/glpi-project/glpi/releases/download/9.3.1/glpi-9.3.1.tgz /tmp/glpi.tgz
+ADD https://github.com/glpi-project/glpi/releases/download/9.3.2/glpi-9.3.2.tgz /tmp/glpi.tgz
 
 ENTRYPOINT ["docker-php-entrypoint"]
 
