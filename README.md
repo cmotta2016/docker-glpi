@@ -6,7 +6,7 @@ GLPI is the Information Resource-Manager with an additional Administration- Inte
 GLPI version: 9.3.2
 PHP version: 7.2.12
 Web Server: Apache 2.4.10
-OS: Debian Jessie
+OS: Debian Stretch
 
 # How to use this image
 You will need a database. The following example run container in background linking to a database container.
