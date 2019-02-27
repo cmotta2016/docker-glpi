@@ -4,4 +4,5 @@ services:
 
 after_success:
  - docker build -t cmotta2016/release-9.3.2 .
+ - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
  - docker push cmotta2016/release-9.3.2
