@@ -1,0 +1,24 @@
+sudo: required
+services:
+ - docker
+
+script:
+  - echo "no tests!"
+
+after_success:
+ - docker build -t cmotta2016/glpi .
+ - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+ - docker push cmotta2016/glpi
+
+deploy:
+ provider: elasticbeanstalk
+ region: "sa-east-1"
+ app: "docker-glpi"
+ env: "DockerGlpi-env"
+ bucket_name: "elasticbeanstalk-sa-east-1-993975117034"
+ bucket_path: "docker-glpi"
+ on:
+  branch: master
+ access_key_id: $AWS_ACCESS_KEY
+ secret_access_key:
+  secure: "$AWS_SECRET_KEY"
