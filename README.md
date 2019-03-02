@@ -48,7 +48,7 @@ volumes:
   glpiserver:
 ```
 
-So, inside work dir, run the following command and enjoy it:
+So run the following command and enjoy it:
 ```
 # docker-compose up -d
 ```
