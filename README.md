@@ -26,12 +26,12 @@ version: '3'
 
 services:
    db:
-     image: mysql:5.7.22
+     image: mysql:5.7.25
      volumes:
        - database:/var/lib/mysql
      restart: unless-stopped
      environment:
-       MYSQL_ROOT_PASSWORD: glpi
+       MYSQL_ROOT_PASSWORD: <your_custom_password>
      container_name: database
 
    glpi:
