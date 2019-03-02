@@ -1,0 +1,21 @@
+sudo: required #is required to use docker service in travis
+
+language: php #can be any language, just php for example
+
+services:
+  - docker # required, but travis uses older version of docker :(
+
+install:
+  - echo "install nothing!" # put your normal pre-testing installs here
+
+script:
+  - echo "no tests!" # put your normal testing scripts here
+
+after_success:
+  - docker --version  # document the version travis is using
+  - pip install --user awscli # install aws cli w/o sudo
+  - export PATH=$PATH:$HOME/.local/bin # put aws in the path
+  - eval $(aws ecr get-login --no-include-email --region sa-east-1)
+  - docker build -t glpi .
+  - docker tag glpi:latest 993975117034.dkr.ecr.sa-east-1.amazonaws.com/glpi:latest
+  - docker push 993975117034.dkr.ecr.sa-east-1.amazonaws.com/glpi:latest
