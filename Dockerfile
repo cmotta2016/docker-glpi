@@ -26,7 +26,7 @@ RUN echo extension=apcu.so > /usr/local/etc/php/php.ini
 RUN docker-php-ext-enable apc
 
 ## Download GLPI package from github latest version
-ADD https://github.com/glpi-project/glpi/releases/download/9.4.0/glpi-9.4.0.tgz /tmp/glpi.tgz
+ADD https://github.com/glpi-project/glpi/releases/download/9.3.4/glpi-9.3.4.tgz /tmp/glpi.tgz
 
 ENTRYPOINT ["docker-php-entrypoint"]
 
