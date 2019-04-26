@@ -4,7 +4,7 @@ GLPI is the Information Resource-Manager with an additional Administration- Inte
 
 # About image
 GLPI version: 9.4.2
-PHP version: 7.3.2
+PHP version: 7.3.4
 Web Server: Apache 2.4.25
 OS: Debian Stretch
 
