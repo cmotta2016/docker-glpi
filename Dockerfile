@@ -30,6 +30,7 @@ RUN sed -i 's./var/www/html./var/www/glpi.g' /etc/apache2/sites-available/000-de
 ADD https://github.com/glpi-project/glpi/releases/download/9.4.2/glpi-9.4.2.tgz /tmp/glpi.tgz
 RUN chown www-data:www-data /tmp/glpi.tgz ; \
     chmod 777 /tmp/glpi.tgz
+RUN chown www-data:www-data /var/www/
 
 ENTRYPOINT ["docker-php-entrypoint"]
 
