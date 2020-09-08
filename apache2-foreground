@@ -6,9 +6,9 @@ set -e
 # Unpack glpi to /var/www/
 #tar -C /var/www/ -xf /tmp/glpi.tgz
 ls -lha /glpi
-cd /glpi
+ls -lha /glpi/glpi
 ls -lha /var/www/html
-mv /glpi/glpi/ /var/www/html/
+mv /glpi/glpi/* /var/www/html/
 # Change permissions on default glpi dir
 #chown -R www-data:www-data /var/www/glpi/
 
