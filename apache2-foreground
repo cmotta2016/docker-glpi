@@ -4,7 +4,6 @@ set -e
 # Change default dir on apache default site
 #sed -i 's./var/www/html./var/www/glpi.g' /etc/apache2/sites-available/000-default.conf
 # Unpack glpi to /var/www/
-chown -R www-data:www-data /var/www/
 tar -C /var/www/ -xf /tmp/glpi.tgz
 # Change permissions on default glpi dir
 chown -R www-data:www-data /var/www/glpi/
