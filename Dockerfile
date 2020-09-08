@@ -28,15 +28,15 @@ RUN sed -i 's./var/www/html./var/www/glpi.g' /etc/apache2/sites-available/000-de
 
 ## Download GLPI package from github
 ADD https://github.com/glpi-project/glpi/releases/download/9.4.2/glpi-9.4.2.tgz /tmp/glpi.tgz
-RUN chown www-data:www-data /tmp/glpi.tgz
+#RUN chown www-data:www-data /tmp/glpi.tgz
 
 ENTRYPOINT ["docker-php-entrypoint"]
 
 COPY apache2-foreground /usr/local/bin/
 COPY cas.tgz /var/www/html/
 RUN pear install cas.tgz
-RUN chown www-data:www-data /usr/local/bin/apache2-foreground ; \
-    chmod +x /usr/local/bin/apache2-foreground
-USER www-data
+#RUN chown www-data:www-data /usr/local/bin/apache2-foreground ; \
+RUN chmod +x /usr/local/bin/apache2-foreground
+#USER www-data
 EXPOSE 80 443
 CMD ["apache2-foreground"]
