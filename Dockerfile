@@ -41,7 +41,8 @@ COPY apache2-foreground /usr/local/bin/
 COPY cas.tgz /var/www/html/
 RUN pear install cas.tgz
 #RUN chown www-data:www-data /usr/local/bin/apache2-foreground ; \
-RUN chmod +x /usr/local/bin/apache2-foreground
+RUN chmod +x /usr/local/bin/apache2-foreground ; \
+    chown -R www-data:www-data /var/www/html
 USER www-data
 EXPOSE 80 443
 CMD ["apache2-foreground"]
