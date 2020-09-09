@@ -6,8 +6,8 @@ script:
   - echo "no tests!"
 
 after_success:
- - docker build -t cmotta2016/glpi:release-9.4.6 .
- - docker tag cmotta2016/glpi:release-9.4.6 cmotta2016/glpi:latest
+ - docker build -t cmotta2016/glpi:release-9.5.0 .
+ - docker tag cmotta2016/glpi:release-9.5.0 cmotta2016/glpi:latest
  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
- - docker push cmotta2016/glpi:release-9.4.6
+ - docker push cmotta2016/glpi:release-9.5.0
  - docker push cmotta2016/glpi:latest
