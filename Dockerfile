@@ -27,7 +27,7 @@ RUN docker-php-ext-enable apc
 #RUN sed -i 's./var/www/html./var/www/html/glpi.g' /etc/apache2/sites-available/000-default.conf
 
 ## Download GLPI package from github
-ADD https://github.com/glpi-project/glpi/releases/download/9.4.6/glpi-9.4.6.tgz /tmp/glpi.tgz
+ADD https://github.com/glpi-project/glpi/releases/download/9.5.0/glpi-9.5.0.tgz /tmp/glpi.tgz
 
 
 ENTRYPOINT ["docker-php-entrypoint"]
