@@ -27,22 +27,15 @@ RUN docker-php-ext-enable apc
 #RUN sed -i 's./var/www/html./var/www/html/glpi.g' /etc/apache2/sites-available/000-default.conf
 
 ## Download GLPI package from github
-ADD https://github.com/glpi-project/glpi/releases/download/9.4.3/glpi-9.4.3.tgz /tmp/glpi.tgz
-#RUN mkdir /glpi ; \
-#    tar -C /glpi -xf /tmp/glpi9.tgz ; \
-#    chown -R www-data:www-data /glpi
-#RUN chown www-data:www-data /tmp/glpi.tgz ; \
-#    chmod 777 /tmp/glpi.tgz
-#RUN chown www-data:www-data /var/www/
+ADD https://github.com/glpi-project/glpi/releases/download/9.4.4/glpi-9.4.4.tgz /tmp/glpi.tgz
+
 
 ENTRYPOINT ["docker-php-entrypoint"]
 
 COPY apache2-foreground /usr/local/bin/
 COPY cas.tgz /var/www/html/
 RUN pear install cas.tgz
-#RUN chown www-data:www-data /usr/local/bin/apache2-foreground ; \
 RUN chmod +x /usr/local/bin/apache2-foreground
-#    chown -R www-data:www-data /var/www/html
 USER root
 EXPOSE 80 443
 CMD ["apache2-foreground"]
